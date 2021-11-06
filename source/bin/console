@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../autoload.php';
+
+$container = new \App\Container\NaiveContainer(include __DIR__ . '/../config/container.php');
+
+$application = new \App\Application($container);
+
+if(php_sapi_name() === 'cli') {
+    $application->run(new \App\Request\CliRequest($_SERVER['argv']));
+} else {
+    throw new \RuntimeException('Interface is not supported');
+}
