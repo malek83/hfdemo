@@ -11,6 +11,10 @@ use App\Input\JsonInput;
 use App\Input\XmlInput;
 use App\Resolver\FileTypeResolver;
 
+/**
+ * Class InputAbstractFactory
+ * @package App\AbstractFactory
+ */
 final class InputAbstractFactory
 {
     private const JSON = 'json';
@@ -28,6 +32,7 @@ final class InputAbstractFactory
         $fileType = $this->fileTypeResolver->resolve($filePath);
 
         $absolutePath = realpath($filePath);
+
         return match ($fileType) {
             self::JSON => new JsonInput($absolutePath),
             self::CSV => new CsvInput($absolutePath),

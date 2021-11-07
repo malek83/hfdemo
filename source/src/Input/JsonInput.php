@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace App\Input;
 
-class JsonInput implements InputInterface
+/**
+ * Class JsonInput
+ * @package App\Input
+ */
+final class JsonInput implements InputInterface
 {
     protected ?array $content = null;
 

@@ -7,6 +7,10 @@ namespace App\UseCase;
 use App\AbstractFactory\InputAbstractFactory;
 use App\Service\DataReaderService;
 
+/**
+ * Class ReadDataFromFileUseCase
+ * @package App\UseCase
+ */
 class ReadDataFromFileUseCase
 {
     public function __construct(protected InputAbstractFactory $inputAbstractFactory, protected DataReaderService $service)

@@ -6,6 +6,10 @@ namespace App\Repository;
 
 use App\Entity\UserEntity;
 
+/**
+ * Class PrintOnScreenUserRepository
+ * @package App\Repository
+ */
 class PrintOnScreenUserRepository implements UserRepositoryInterface
 {
     public function persist(UserEntity $user): UserEntity

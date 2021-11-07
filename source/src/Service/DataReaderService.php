@@ -8,9 +8,6 @@ use App\Exception\ValidationException;
 use App\Input\InputInterface;
 use App\Mapper\UserEntityMapper;
 use App\Repository\UserRepositoryInterface;
-use App\Rule\GenderRule;
-use App\Rule\NumericRule;
-use App\Rule\StringRule;
 use App\Validator\Validator;
 
 /**
@@ -23,8 +20,11 @@ final class DataReaderService
 
     public const MINIMAL_AGE = 0;
 
-    public function __construct(protected UserRepositoryInterface $repository, protected UserEntityMapper $mapper, protected Validator $userRowValidator)
-    {
+    public function __construct(
+        protected UserRepositoryInterface $repository,
+        protected UserEntityMapper $mapper,
+        protected Validator $userRowValidator
+    ) {
     }
 
     public function read(InputInterface $input): void
@@ -34,8 +34,8 @@ final class DataReaderService
         while ($input->valid()) {
             $element = $input->current();
 
-            if($this->userRowValidator->validate($element) === false) {
-                throw new ValidationException();
+            if ($this->userRowValidator->validate($element) === false) {
+                throw ValidationException::dataAtRowIsInvalid($input->key());
             }
 
             $userEntity = $this->mapper->map($element);

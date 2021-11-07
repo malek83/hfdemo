@@ -18,6 +18,6 @@ class HealthCheckCommand implements CommandInterface
 
     public function run(array $parameters): void
     {
-        echo self::OK .PHP_EOL;
+        echo self::OK . PHP_EOL;
     }
 }

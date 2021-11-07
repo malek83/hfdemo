@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace App\Input;
 
-class XmlInput extends \SimpleXMLIterator implements InputInterface
+/**
+ * Class XmlInput
+ * @package App\Input
+ */
+final class XmlInput extends \SimpleXMLIterator implements InputInterface
 {
     public function __construct(string $filePath)
     {
