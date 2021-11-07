@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  php:
+    container_name: hfdemo-php
+    restart: always
+    build:
+      context: ./docker/php/
+    volumes:
+      - ./source:/source
