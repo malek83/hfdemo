@@ -48,7 +48,8 @@ final class Application
             /** @var CommandInterface $command */
             $command = $this->container->get($commandClassName);
 
-            $command->run();
+            $parameters = $request->get(CliRequest::PARAMETERS, []);
+            $command->run($parameters);
         } else {
             throw InvalidCommandArgumentException::commandNotFound();
         }

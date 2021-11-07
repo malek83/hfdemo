@@ -10,5 +10,5 @@ namespace App\Console\Command;
  */
 interface CommandInterface
 {
-    public function run(): void;
+    public function run(array $parameters): void;
 }

@@ -18,11 +18,11 @@ class InvalidCommandArgumentException extends RuntimeException
 
     public static function commandNameNotProvided(): InvalidCommandArgumentException
     {
-        return new InvalidCommandArgumentException(self::MEASSAGE_PLEASE_PROVIDE_A_COMMAND_NAME);
+        return new InvalidCommandArgumentException(self::MEASSAGE_PLEASE_PROVIDE_A_COMMAND_NAME, 400);
     }
 
     public static function commandNotFound(): InvalidCommandArgumentException
     {
-        return new InvalidCommandArgumentException(self::MESSAGE_COMMAND_WITH_GIVEN_NAME_WAS_NOT_FOUND);
+        return new InvalidCommandArgumentException(self::MESSAGE_COMMAND_WITH_GIVEN_NAME_WAS_NOT_FOUND, 404);
     }
 }

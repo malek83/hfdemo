@@ -12,11 +12,11 @@ namespace App\Console\Command;
  */
 class HealthCheckCommand implements CommandInterface
 {
-    public const NAME = 'health-check';
+    public const NAME = 'health';
 
     const OK = 'OK';
 
-    public function run(): void
+    public function run(array $parameters): void
     {
         echo self::OK .PHP_EOL;
     }

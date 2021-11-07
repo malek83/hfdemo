@@ -12,10 +12,10 @@ use Exception;
  */
 class ContainerServiceNotFoundException extends Exception
 {
-    protected $message = 'Service with given id dosen\'t not found';
+    const MESSAGE_SERVICE_NOT_FOUND = 'Service with given id dosen\'t not found';
 
     public static function create(): ContainerServiceNotFoundException
     {
-        return new ContainerServiceNotFoundException();
+        return new ContainerServiceNotFoundException(self::MESSAGE_SERVICE_NOT_FOUND, 500);
     }
 }

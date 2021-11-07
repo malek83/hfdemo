@@ -28,7 +28,7 @@ final class NaiveContainer implements ContainerInterface
      */
     public function get(string $serviceName)
     {
-        return $this->has($serviceName) ? $this->instanitate($serviceName) : throw new ContainerServiceNotFoundException();
+        return $this->has($serviceName) ? $this->instanitate($serviceName) : throw ContainerServiceNotFoundException::create();
     }
 
     /**
