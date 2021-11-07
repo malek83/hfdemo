@@ -12,6 +12,6 @@ class ValidationException extends \RuntimeException
 {
     public static function dataAtRowIsInvalid(int $key): ValidationException
     {
-        return new ValidationException(sprintf('Data at row %d is invalid', $key));
+        return new ValidationException(sprintf('Data at row %d is invalid', $key), 422);
     }
 }
