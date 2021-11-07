@@ -27,6 +27,11 @@ final class DataReaderService
     ) {
     }
 
+    /**
+     * Read data from given source and persists at given output
+     *
+     * @param InputInterface $input
+     */
     public function read(InputInterface $input): void
     {
         $input->rewind();

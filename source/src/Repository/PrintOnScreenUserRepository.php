@@ -7,7 +7,10 @@ namespace App\Repository;
 use App\Entity\UserEntity;
 
 /**
+ * Simple implementation of UserRepositoryInterface - only prints data at the screen
+ *
  * Class PrintOnScreenUserRepository
+ *
  * @package App\Repository
  */
 class PrintOnScreenUserRepository implements UserRepositoryInterface

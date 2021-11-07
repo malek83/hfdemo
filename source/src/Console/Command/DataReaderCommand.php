@@ -9,6 +9,12 @@ use App\UseCase\ReadDataFromFileUseCase;
 use App\Rule\FilePathRule;
 
 /**
+ * Data file reader command
+ *
+ * filePath is a requeired argument i.e. ./resources/sample.json
+ *
+ * Example usage: ./bin/console read ./resources/sample.csv
+ *
  * Class DataLoaderCommand
  * @package Console\Command
  */

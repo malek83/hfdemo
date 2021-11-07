@@ -7,6 +7,8 @@ namespace App\Console\Command;
 /**
  * Simple health check command
  *
+ * Example usage: ./bin/console health
+ *
  * Class HealthCheckCommand
  * @package Console\Command
  */

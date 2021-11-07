@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+/**
+ *
+ * Class UserEntity
+ * @package App\Entity
+ */
 class UserEntity
 {
     public const MALE = 'male';

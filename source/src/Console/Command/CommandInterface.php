@@ -10,5 +10,10 @@ namespace App\Console\Command;
  */
 interface CommandInterface
 {
+    /**
+     * Body of the command
+     *
+     * @param array $parameters
+     */
     public function run(array $parameters): void;
 }

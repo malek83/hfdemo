@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Request;
 
 /**
+ * Request object
+ *
  * Class CliRequest
  * @package App\Request
  */

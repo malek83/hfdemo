@@ -8,6 +8,8 @@ use App\Entity\UserEntity;
 use App\Input\InputInterface;
 
 /**
+ * Class maps the source data into to valid User entity
+ *
  * Class UserEntityMapper
  * @package App\Mapper
  */

@@ -27,6 +27,15 @@ final class InputAbstractFactory
     {
     }
 
+    /**
+     * Create the input object suitable for given input file type
+     *
+     * @throws InputException
+     *
+     * @param string $filePath
+     * @return InputInterface
+     * @throws \Exception
+     */
     public function create(string $filePath): InputInterface
     {
         $fileType = $this->fileTypeResolver->resolve($filePath);

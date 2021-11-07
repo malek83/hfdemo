@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Resolver;
 
 /**
+ * Resolves the type from the given file
+ *
  * Class FileTypeResolver
  * @package App\Resolver
  */
