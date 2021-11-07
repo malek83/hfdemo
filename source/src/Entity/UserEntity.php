@@ -6,6 +6,10 @@ namespace App\Entity;
 
 class UserEntity
 {
+    public const MALE = 'male';
+
+    public const FEMALE = 'female';
+
     public function __construct(protected string $firstName, protected string $gender, protected int $age)
     {
     }

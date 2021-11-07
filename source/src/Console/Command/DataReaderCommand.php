@@ -6,7 +6,7 @@ namespace App\Console\Command;
 
 use App\Exception\FileException;
 use App\UseCase\ReadDataFromFileUseCase;
-use App\Validator\FilePathValidator;
+use App\Rule\FilePathRule;
 
 /**
  * Class DataLoaderCommand
@@ -22,9 +22,9 @@ class DataReaderCommand implements CommandInterface
 
     public function run(array $parameters): void
     {
-        $filePathValidator = new FilePathValidator();
+        $filePathRule = new FilePathRule();
         $filePath = $parameters[0] ?? null;
-        if($filePathValidator->validate($filePath) === false) {
+        if($filePathRule->validate($filePath) === false) {
             throw FileException::notFound($filePath);
         }
 

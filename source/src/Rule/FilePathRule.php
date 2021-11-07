@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Validator;
+namespace App\Rule;
 
 /**
  * Interface FilePathValidator
  * @package App\Validator
  */
-class FilePathValidator implements ValidatorInterface
+final class FilePathRule implements RuleInterface
 {
     public function validate($param): bool
     {

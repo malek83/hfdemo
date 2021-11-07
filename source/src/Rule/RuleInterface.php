@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Validator;
+namespace App\Rule;
 
 /**
  * Interface ValidatorInterface
  * @package App\Validator
  */
-interface ValidatorInterface
+interface RuleInterface
 {
     /**
      * @param $param
