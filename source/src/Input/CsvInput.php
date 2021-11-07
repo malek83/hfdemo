@@ -4,9 +4,15 @@ declare(strict_types=1);
 
 namespace App\Input;
 
-class CsvInput extends \SplFileObject implements InputInterface
+/**
+ * Class CsvInput
+ * @package App\Input
+ */
+final class CsvInput extends \SplFileObject implements InputInterface
 {
     const FILE_OPEN_MODE = 'r';
+
+    protected array $headers = [];
 
     public function __construct(string $filePath, string $delimiter = ',')
     {
@@ -19,22 +25,31 @@ class CsvInput extends \SplFileObject implements InputInterface
     {
         $row = parent::current();
 
-        if(!$row) {
-            return null;
-        }
-
         /**
-         * skip headers
+         * set headers
          */
-        if($this->key() === 0) {
+        if ($this->key() === 0) {
+            $this->setHeaders($row ?? []);
             $this->next();
             $row = parent::current();
         }
 
-        return [
-            'first_name' => $row[0],
-            'age' => $row[1],
-            'gender' => $row[2],
-        ];
+        if (!$row) {
+            return null;
+        }
+
+        return $this->mapValues($row);
+    }
+
+    private function setHeaders(array $headers): void
+    {
+        $this->headers = array_flip(array_map('strtolower', $headers));
+    }
+
+    private function mapValues(array $row): array
+    {
+        return array_map(function ($value) use ($row) {
+            return $row[$value] ?? null;
+        }, $this->headers);
     }
 }
