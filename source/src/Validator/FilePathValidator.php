@@ -12,7 +12,16 @@ class FilePathValidator implements ValidatorInterface
 {
     public function validate($param): bool
     {
-        if (file_exists(realpath($param)) === false) {
+        if(is_string($param) === false) {
+            return false;
+        }
+
+        $absoluteFilePath = realpath($param);
+        if (is_string($absoluteFilePath) === false) {
+            return false;
+        }
+
+        if (file_exists($absoluteFilePath) === false) {
             return false;
         }
 
