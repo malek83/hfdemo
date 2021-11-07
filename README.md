@@ -1,5 +1,7 @@
 # H.F. Demo
 
+The application entrypoint file is ```./bin/console``` (it's a php script)
+
 ## TL;DR
 
 1. run script ```./run.sh``` build the docker setup
